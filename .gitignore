@@ -1,0 +1,16 @@
+# Python environments and caches (rebuilt automatically by uv)
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+claude_desktop_config.json
+
+# Logs (can contain account activity)
+*.log

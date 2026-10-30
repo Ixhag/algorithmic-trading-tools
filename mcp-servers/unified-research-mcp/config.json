@@ -1,0 +1,10 @@
+{
+  "searxng_port": 8888,
+  "searxng_start_timeout_seconds": 60,
+  "search_timeout_seconds": 20,
+  "max_results_per_page": 20,
+  "scrape_timeout_seconds": 30,
+  "scrape_render_wait_seconds": 8,
+  "scrape_max_chars": 15000,
+  "auto_install_chromium": true
+}

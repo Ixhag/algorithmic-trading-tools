@@ -1,0 +1,21 @@
+[project]
+name = "unified-research-mcp"
+version = "2.0.0"
+description = "One local MCP server: SearXNG meta-search (bundled, no Docker) + Playwright full-page reader."
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "fastmcp==3.4.7",
+    "mcp==1.29.1",
+    "httpx>=0.28,<1",
+    "playwright>=1.55,<2",
+    "pypdf>=5,<7",
+    "searxng==2026.10.30+1cd13d9",
+    "waitress>=3,<4",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+# SearXNG pinned to commit 1cd13d9 (2026-10-30), prebuilt so nothing is compiled or fetched from git.
+searxng = { path = "vendor/searxng-2026.10.30+1cd13d9-py3-none-any.whl" }

@@ -1,0 +1,12 @@
+[submodule "mcp-servers/ibkr-mcp-server"]
+	path = mcp-servers/ibkr-mcp-server
+	url = https://github.com/arjundivecha/ibkr-mcp-server.git
+[submodule "mcp-servers/mcp-optionsflow"]
+	path = mcp-servers/mcp-optionsflow
+	url = https://github.com/twolven/mcp-optionsflow.git
+[submodule "mcp-servers/sec-edgar-mcp"]
+	path = mcp-servers/sec-edgar-mcp
+	url = https://github.com/stefanoamorelli/sec-edgar-mcp.git
+[submodule "mcp-servers/tradingview-mcp"]
+	path = mcp-servers/tradingview-mcp
+	url = https://github.com/atilaahmettaner/tradingview-mcp.git

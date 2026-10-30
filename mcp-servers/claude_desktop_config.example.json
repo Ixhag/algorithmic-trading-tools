@@ -1,0 +1,81 @@
+{
+  "_INSTRUCTIONS_READ_ME": [
+    "==========================================================================",
+    "                   INTERACTIVE BROKERS MCP QUICK SETTINGS                 ",
+    "==========================================================================",
+    "1) PORTS: 7497=TWS Paper, 7496=TWS Live, 4002=Gateway Paper, 4001=Gateway Live.",
+    "2) SAFETY SWITCHES: 'IBKR_IS_PAPER' and 'ENABLE_LIVE_TRADING' accept true or false.",
+    "3) SUB-ACCOUNT BUCKET: Hardcode your segment ID directly into 'IBKR_DEFAULT_ACCOUNT' below.",
+    "=========================================================================="
+  ],
+  "mcpServers": {
+    "ibkr-canada-execution": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PATH-TO-REPO>\\mcp-servers\\ibkr-mcp-server",
+        "--with",
+        "pydantic-settings",
+        "--with",
+        "mcp<2",
+        "python",
+        "-m",
+        "ibkr_mcp_server.main"
+      ],
+      "env": {
+        "IBKR_HOST": "127.0.0.1",
+        "IBKR_PORT": "7497",
+        "IBKR_CLIENT_ID": "1",
+        "IBKR_IS_PAPER": "true",
+        "ENABLE_LIVE_TRADING": "false",
+        "IBKR_DEFAULT_ACCOUNT": "",
+        "LOG_FILE": "<PATH-TO-REPO>\\mcp-servers\\ibkr-mcp-server\\ibkr-mcp-server.log"
+      }
+    },
+    "mcp-optionsflow": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PATH-TO-REPO>\\mcp-servers\\mcp-optionsflow",
+        "python",
+        "optionsflow.py"
+      ]
+    },
+    "tradingview-mcp-analytics": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PATH-TO-REPO>\\mcp-servers\\tradingview-mcp",
+        "tradingview-mcp"
+      ],
+      "env": {
+        "MARKETAUX_API_TOKEN": "<your-marketaux-token>"
+      }
+    },
+    "sec-edgar-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PATH-TO-REPO>\\mcp-servers\\sec-edgar-mcp",
+        "sec-edgar-mcp"
+      ],
+      "env": {
+        "SEC_EDGAR_USER_AGENT": "Your Name (you@example.com)"
+      }
+    },
+    "unified-research-engine": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PATH-TO-REPO>\\mcp-servers\\unified-research-mcp",
+        "python",
+        "main.py"
+      ]
+    }
+  }
+}
